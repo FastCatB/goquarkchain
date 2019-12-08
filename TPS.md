@@ -4,15 +4,15 @@
 
 **Number of CPUs**
 
-[1. 32cpu * 3   2. 32cpu*3 3. 32cpu*2]
+[1. 32cpu * 3     2. 32cpu * 3   3. 32cpu * 2]
 
 **Memory (GB)**
 
-[1.64gb*3  2.64gb*3  3.64gb*2]
+[1.64gb * 3    2.64gb * 3    3.64gb * 2]
 
 **Storage (GB)**
 
-[1.50GB*3  2.50gb*3  3.50GB*2]
+[1.50GB * 3    2.50gb * 3    3.50GB * 2]
 
 **Network**
 
