@@ -4,23 +4,23 @@
 
 **Number of CPUs**
 
-[How many logical CPUs does the machine have for running one cluster?]
+[1. 32cpu*3   2. 32cpu*3 3. 32cpu*2]
 
 **Memory (GB)**
 
-[How much memory does the machine have for running one cluster? For example, 16G.]
+[1.64gb*3  2.64gb*3  3.64gb*2]
 
 **Storage (GB)**
 
-[Note down both the type and capacity of the storage on one machine. For example, SSD 1024G.]
+[1.50GB*3  2.50gb*3  3.50GB*2]
 
 **Network**
 
-[Comment on the network connecting clusters. For example, 1 Gbps LAN]
+[ 6 Gbps LAN]
 
 **Machine Type (Optional)**
 
-[If you are using public cloud service, note down the name of the provider and the machine type. For example, AWS EC2 m5.2xlarge.]
+[腾讯云 S2.8XLARGE64（标准型S2，32核64GB）]
 
 **Command Lines for Running Cluster**
 ```
@@ -29,7 +29,7 @@
 
 **Peak TPS**
 
-[Note down the top 2 highest TPS observed. The final peak TPS value will be the smaller ones in the TOP TWO clusters’(at least 3 clusters) peak TPS.]
+[42918    29628]
 
 **Video URL**
 
@@ -37,18 +37,85 @@
 
 **Output From `stats` Tool (Highest TPS)**
 ```
-[Copy the complete output from `stats` here. It should capture the cluster configuration and at least 10 minute continuous samples (60 rows) with at least one sample showing the heightest TPS claimed above.]
+[============================
+QuarkChain Cluster Stats
+============================
+CPU:                24
+Memory:             47 GB
+IP:                 172.22.0.9
+Chains:             64
+Network Id:         3
+Peers:              172.22.0.14:33668,172.22.0.4:54532
+============================
+Timestamp		Syncing	TPS	Pend.TX	Conf.TX	BPS	SBPS	CPU	ROOT
+2019-12-07 15:57:20	true	0.00	0	0	62.90	76.30	100.00	2
+2019-12-07 15:57:30	true	0.00	0	0	58.03	56.77	100.00	3
+2019-12-07 15:57:40	true	0.00	0	0	55.17	41.27	100.00	2
+2019-12-07 15:57:50	true	0.00	0	0	53.25	38.78	100.00	3
+2019-12-07 15:58:00	true	0.00	0	0	43.10	47.08	100.00	3
+2019-12-07 15:58:10	true	0.00	0	0	40.90	58.13	100.00	3
+2019-12-07 15:58:20	true	0.00	2297	0	40.97	61.75	100.00	3
+2019-12-07 15:58:30	true	0.00	8317	0	42.35	63.67	100.00	3
+2019-12-07 15:58:40	true	1596.00	115170	15995	44.63	66.68	100.00	3
+2019-12-07 15:58:50	true	3198.00	296226	31990	52.17	75.00	100.00	3
+2019-12-07 15:59:00	true	5250.00	588136	52555	67.92	90.20	100.00	3
+2019-12-07 15:59:10	true	8910.00	1028122	89115	78.88	104.58	100.00	3
+2019-12-07 15:59:20	true	9366.00	1059699	95970	79.60	103.38	100.00	4
+2019-12-07 15:59:30	true	7080.00	1055006	75405	80.22	105.70	100.00	4
+2019-12-07 15:59:40	true	10392.00	1038525	110809	81.37	110.18	100.00	4
+2019-12-07 15:59:50	true	14106.00	1002412	152510	81.60	110.28	100.00	4
+2019-12-07 16:00:00	true	17532.00	1057121	195929	81.47	109.67	100.00	4
+2019-12-07 16:00:10	true	13362.00	2929443	163369	97.17	124.77	100.00	5
+2019-12-07 16:00:20	true	9936.00	2955348	140524	95.22	120.78	100.00	5
+2019-12-07 16:00:30	true	11424.00	2963436	171374	95.22	120.62	100.00	5
+2019-12-07 16:00:40	true	9024.00	4306259	159949	89.32	78.60	100.00	6
+^Csignal: interrupt
+root@9edc01d0d769:/go/src/github.com/QuarkChain/goquarkchain/cmd/stats# go run stats.go --ip  172.22.0.14
+============================
+QuarkChain Cluster Stats
+============================
+CPU:                24
+Memory:             47 GB
+IP:                 172.22.0.14
+Chains:             64
+Network Id:         3
+Peers:              172.22.0.9:51838,172.22.0.4:53160
+============================
+Timestamp		Syncing	TPS	Pend.TX	Conf.TX	BPS	SBPS	CPU	ROOT
+2019-12-07 16:01:00	false	36054.00	649527	385978	69.58	39.47	100.00	10
+2019-12-07 16:01:10	false	42918.00	667566	485142	67.82	38.52	17.28	10
+2019-12-07 16:01:20	false	39834.00	852859	526738	67.70	37.23	26.30	10
+2019-12-07 16:01:30	false	36180.00	953650	581991	67.87	35.57	8.00	10
+2019-12-07 16:01:40	false	33474.00	955830	596038	68.03	34.32	12.64	10
+2019-12-07 16:01:50	false	32886.00	977964	630272	67.12	32.65	99.79	10
+2019-12-07 16:02:00	false	30330.00	1056093	650173	66.93	31.58	100.00	11
 ```
 **Output From `stats` Tool (Second highest TPS)**
 ```
-[Copy the complete output from `stats` here. It should capture the cluster configuration and at least 10 minute continuous samples (60 rows) with at least one sample showing the second highest TPS claimed above.]
+============================
+QuarkChain Cluster Stats
+============================
+CPU:                24
+Memory:             47 GB
+IP:                 172.22.0.4
+Chains:             64
+Network Id:         3
+Peers:              172.22.0.9:38291,172.22.0.14:38291
+============================
+Timestamp		Syncing	TPS	Pend.TX	Conf.TX	BPS	SBPS	CPU	ROOT
+2019-12-07 16:02:11	false	27606.00	953723	581601	55.87	40.05	100.00	10
+2019-12-07 16:02:21	false	27966.00	974709	607056	54.27	39.10	100.00	10
+2019-12-07 16:02:31	false	28416.00	1039243	649642	53.35	37.72	100.00	10
+2019-12-07 16:02:41	true	29184.00	1165958	686619	52.78	36.68	100.00	10
+2019-12-07 16:02:51	true	29436.00	1258644	724865	52.85	35.52	97.11	10
+2019-12-07 16:03:01	true	29628.00	1678358	772525	53.40	34.23	41.23	11
+2019-12-07 16:03:11	true	28308.00	1692670	788968	55.20	32.20	32.22	11
 ```
 
 **Cluster Configurations**
-[Provide the link to the cluster config file (cluster_config_template.json, checked in to your forked repo) used in your clusters. 
-If deployer is used, please provide deployConfig.json as well (password is not needed).]
+[https://github.com/FastCatB/goquarkchain/blob/master/tests/loadtest/deployer/deployConfig.json
+https://github.com/FastCatB/goquarkchain/blob/master/tests/loadtest/cluster_config.json]
 
 **Additional Comment**
 
-[If you have special setup, e.g., running a single cluster over multiple machines, the above questionnaire might not fit. Note down
-whatever you want us to know here to help evaluate the result.]
+[each chain have 8 cluster]
