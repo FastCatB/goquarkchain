@@ -4,7 +4,7 @@
 
 **Number of CPUs**
 
-[1. 32cpu*3   2. 32cpu*3 3. 32cpu*2]
+[1. 32cpu * 3   2. 32cpu*3 3. 32cpu*2]
 
 **Memory (GB)**
 
